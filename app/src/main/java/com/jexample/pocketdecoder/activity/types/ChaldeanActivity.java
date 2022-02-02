@@ -35,6 +35,9 @@ public class ChaldeanActivity extends AppCompatActivity {
                 binding.tvEquation.setText(
                         ChaldeanTable.getInstance().getChaldeanEquation(word)
                 );
+                binding.tvResult.setText(
+                        ChaldeanTable.getInstance().getChaldeanResult(word)
+                );
             }
         }
     }

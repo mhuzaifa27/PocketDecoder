@@ -29,7 +29,7 @@ public class GeneratorActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 binding.tvGeneratedString.setText(
-                        new RandomString(30, ThreadLocalRandom.current()).nextString()
+                        new RandomString(8, ThreadLocalRandom.current()).nextString()
                 );
             }
         });

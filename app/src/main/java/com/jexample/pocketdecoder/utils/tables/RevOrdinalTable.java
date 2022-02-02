@@ -58,7 +58,7 @@ public class RevOrdinalTable {
                 result += REV_ORDINAL_HASH_TABLE.get(wordInChars[i]);
             }
         }
-        return equation + " = " + result;
+        return "= " + equation;
     }
 
     public String getRevOrdinalResult(String word) {

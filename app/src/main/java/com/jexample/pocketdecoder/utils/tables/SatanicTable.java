@@ -59,7 +59,7 @@ public class SatanicTable {
                 result += SATANIC_HASH_TABLE.get(wordInChars[i]);
             }
         }
-        return equation + " = " + result;
+        return "= "+equation;
     }
     public String getEngExtResult(String word) {
         int result = 0;

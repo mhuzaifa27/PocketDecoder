@@ -34,6 +34,9 @@ public class RevSumerianActivity extends AppCompatActivity {
                 binding.tvEquation.setText(
                         RevSumerianTable.getInstance().getRevSumerianEquation(word)
                 );
+                binding.tvResult.setText(
+                        RevSumerianTable.getInstance().getRevSumerianResult(word)
+                );
             }
         }
     }

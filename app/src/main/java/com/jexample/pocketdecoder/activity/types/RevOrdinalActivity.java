@@ -35,6 +35,9 @@ public class RevOrdinalActivity extends AppCompatActivity {
                 binding.tvEquation.setText(
                         RevOrdinalTable.getInstance().getRevOrdinalEquation(word)
                 );
+                binding.tvResult.setText(
+                        RevOrdinalTable.getInstance().getRevOrdinalResult(word)
+                );
             }
         }
     }

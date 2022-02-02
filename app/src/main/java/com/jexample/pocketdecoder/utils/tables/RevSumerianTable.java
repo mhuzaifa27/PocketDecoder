@@ -59,8 +59,9 @@ public class RevSumerianTable {
                 result += REV_SUMERIAN_HASH_TABLE.get(wordInChars[i]);
             }
         }
-        return equation + " = " + result;
+        return "= " + equation;
     }
+
     public String getRevSumerianResult(String word) {
         int result = 0;
 

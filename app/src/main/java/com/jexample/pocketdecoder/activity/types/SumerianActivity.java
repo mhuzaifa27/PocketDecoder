@@ -32,6 +32,9 @@ public class SumerianActivity extends AppCompatActivity {
                 binding.tvEquation.setText(
                         SumerianTable.getInstance().getSumerianEquation(word)
                 );
+                binding.tvResult.setText(
+                        SumerianTable.getInstance().getSumerianResult(word)
+                );
             }
         }
     }

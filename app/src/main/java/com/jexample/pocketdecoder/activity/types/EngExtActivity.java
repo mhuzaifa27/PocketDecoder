@@ -35,6 +35,9 @@ public class EngExtActivity extends AppCompatActivity {
                 binding.tvEquation.setText(
                         EngExtTable.getInstance().getEngExtEquation(word)
                 );
+                binding.tvResult.setText(
+                        EngExtTable.getInstance().getEngExtResult(word)
+                );
             }
         }
     }

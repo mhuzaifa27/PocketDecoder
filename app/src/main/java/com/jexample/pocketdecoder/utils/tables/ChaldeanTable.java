@@ -59,7 +59,7 @@ public class ChaldeanTable {
                 result += CHALDEAN_HASH_TABLE.get(wordInChars[i]);
             }
         }
-        return equation + " = " + result;
+        return "=" + equation;
     }
 
     public String getChaldeanResult(String word) {

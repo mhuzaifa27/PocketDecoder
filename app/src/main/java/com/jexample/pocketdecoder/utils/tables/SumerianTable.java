@@ -59,7 +59,7 @@ public class SumerianTable {
                 result += SUMERIAN_HASH_TABLE.get(wordInChars[i]);
             }
         }
-        return equation + " = " + result;
+        return "= " + equation;
     }
 
     public String getSumerianResult(String word) {

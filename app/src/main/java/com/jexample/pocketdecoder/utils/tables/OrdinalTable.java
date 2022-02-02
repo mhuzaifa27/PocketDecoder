@@ -58,7 +58,7 @@ public class OrdinalTable {
                 result += ORDINAL_HASH_TABLE.get(wordInChars[i]);
             }
         }
-        return equation + " = " + result;
+        return  "= " + equation;
     }
 
     public String getOrdinalResult(String word) {

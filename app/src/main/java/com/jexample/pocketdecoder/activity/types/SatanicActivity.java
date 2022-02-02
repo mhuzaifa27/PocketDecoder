@@ -34,6 +34,9 @@ public class SatanicActivity extends AppCompatActivity {
                 binding.tvEquation.setText(
                         SatanicTable.getInstance().getSatanicEquation(word)
                 );
+                binding.tvResult.setText(
+                        SatanicTable.getInstance().getEngExtResult(word)
+                );
             }
         }
     }

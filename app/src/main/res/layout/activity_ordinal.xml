@@ -29,30 +29,55 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_20sdp"
             android:fontFamily="@font/chiller"
             android:gravity="top"
             android:text="="
-            android:layout_marginTop="@dimen/_20sdp"
-            app:layout_constraintStart_toStartOf="parent"
             android:textColor="@color/white"
             android:textSize="@dimen/_40sdp"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvWord" />
 
-        <TextView
-            android:id="@+id/tvEquation"
-            android:layout_width="0dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:textSize="@dimen/_30sdp"
-            android:fontFamily="@font/ocr_a"
-            android:textColor="@color/white"
-            android:lineSpacingMultiplier="1.5"
-            android:layout_marginTop="@dimen/_20sdp"
-            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/_20sdp"
             app:layout_constraintBottom_toTopOf="@+id/view2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textView5"
-            app:layout_constraintTop_toBottomOf="@+id/tvWord" />
+            app:layout_constraintTop_toBottomOf="@+id/tvWord">
 
+            <TextView
+                android:id="@+id/tvEquation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:fontFamily="@font/ocr_a"
+                android:gravity="center"
+                android:lineSpacingMultiplier="1.5"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_30sdp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_2sdp"
+                android:layout_marginVertical="@dimen/_10sdp"
+                android:background="@color/white" />
+
+            <TextView
+                android:id="@+id/tvResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_20sdp"
+                android:fontFamily="@font/ocr_a"
+                android:gravity="center"
+                android:lineSpacingMultiplier="1.5"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_30sdp" />
+        </LinearLayout>
         <View
             android:id="@+id/view2"
             android:layout_width="match_parent"

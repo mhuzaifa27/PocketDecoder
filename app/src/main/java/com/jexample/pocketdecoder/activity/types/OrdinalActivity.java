@@ -10,6 +10,7 @@ import com.jexample.pocketdecoder.R;
 import com.jexample.pocketdecoder.databinding.ActivityOrdinalBinding;
 import com.jexample.pocketdecoder.databinding.ActivitySumerianBinding;
 import com.jexample.pocketdecoder.utils.Constants;
+import com.jexample.pocketdecoder.utils.tables.EngExtTable;
 import com.jexample.pocketdecoder.utils.tables.OrdinalTable;
 import com.jexample.pocketdecoder.utils.tables.SumerianTable;
 
@@ -33,6 +34,9 @@ public class OrdinalActivity extends AppCompatActivity {
                 binding.tvWord.setText(word);
                 binding.tvEquation.setText(
                         OrdinalTable.getInstance().getOrdinalEquation(word)
+                );
+                binding.tvResult.setText(
+                        OrdinalTable.getInstance().getOrdinalResult(word)
                 );
             }
         }

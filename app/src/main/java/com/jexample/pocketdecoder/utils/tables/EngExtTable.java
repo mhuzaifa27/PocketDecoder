@@ -59,7 +59,7 @@ public class EngExtTable {
                 result += ENG_EXT_HASH_TABLE.get(wordInChars[i]);
             }
         }
-        return equation + " = " + result;
+        return "= "+equation ;
     }
     public String getEngExtResult(String word) {
         int result = 0;

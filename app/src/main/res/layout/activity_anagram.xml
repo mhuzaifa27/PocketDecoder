@@ -7,8 +7,22 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/anagram_bg"
+        android:background="@drawable/bg1"
         tools:context=".activity.AnagramActivity">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/chiller"
+            android:text="ANAGRAM/R"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_45sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/etInput"
@@ -56,18 +70,24 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <View
+        <TextView
             android:id="@+id/view4"
             android:layout_width="@dimen/_90sdp"
             android:layout_height="@dimen/_40sdp"
+            android:text="WORD:"
+            android:textColor="@color/red"
+            android:fontFamily="@font/ocr_a"
+            android:textSize="@dimen/_26sdp"
+            android:gravity="center"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/view3" />
 
-        <View
+        <ImageView
             android:id="@+id/validate"
             android:layout_width="@dimen/_50sdp"
             android:layout_height="@dimen/_50sdp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            android:src="@drawable/ic_search_white"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
