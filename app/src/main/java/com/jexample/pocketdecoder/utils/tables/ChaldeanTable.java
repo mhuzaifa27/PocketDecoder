@@ -52,11 +52,13 @@ public class ChaldeanTable {
         char[] wordInChars = word.toUpperCase().toCharArray();
         if (wordInChars.length > 0) {
             for (int i = 0; i < wordInChars.length; i++) {
-                if (equation.equals(""))
-                    equation = String.valueOf(CHALDEAN_HASH_TABLE.get(wordInChars[i]));
-                else
-                    equation = equation + "+" + CHALDEAN_HASH_TABLE.get(wordInChars[i]);
-                result += CHALDEAN_HASH_TABLE.get(wordInChars[i]);
+                if (wordInChars[i] != ' ') {
+                    if (equation.equals(""))
+                        equation = String.valueOf(CHALDEAN_HASH_TABLE.get(wordInChars[i]));
+                    else
+                        equation = equation + "+" + CHALDEAN_HASH_TABLE.get(wordInChars[i]);
+                    result += CHALDEAN_HASH_TABLE.get(wordInChars[i]);
+                }
             }
         }
         return "=" + equation;
@@ -68,7 +70,8 @@ public class ChaldeanTable {
         char[] wordInChars = word.toUpperCase().toCharArray();
         if (wordInChars.length > 0) {
             for (int i = 0; i < wordInChars.length; i++) {
-                result += CHALDEAN_HASH_TABLE.get(wordInChars[i]);
+                if (wordInChars[i] != ' ')
+                    result += CHALDEAN_HASH_TABLE.get(wordInChars[i]);
             }
         }
         return String.valueOf(result);

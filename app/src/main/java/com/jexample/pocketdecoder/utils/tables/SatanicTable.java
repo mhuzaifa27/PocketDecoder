@@ -52,22 +52,26 @@ public class SatanicTable {
         char[] wordInChars = word.toUpperCase().toCharArray();
         if (wordInChars.length > 0) {
             for (int i = 0; i < wordInChars.length; i++) {
-                if (equation.equals(""))
-                    equation = String.valueOf(SATANIC_HASH_TABLE.get(wordInChars[i]));
-                else
-                    equation = equation + "+" + SATANIC_HASH_TABLE.get(wordInChars[i]);
-                result += SATANIC_HASH_TABLE.get(wordInChars[i]);
+                if (wordInChars[i] != ' ') {
+                    if (equation.equals(""))
+                        equation = String.valueOf(SATANIC_HASH_TABLE.get(wordInChars[i]));
+                    else
+                        equation = equation + "+" + SATANIC_HASH_TABLE.get(wordInChars[i]);
+                    result += SATANIC_HASH_TABLE.get(wordInChars[i]);
+                }
             }
         }
-        return "= "+equation;
+        return "= " + equation;
     }
+
     public String getEngExtResult(String word) {
         int result = 0;
 
         char[] wordInChars = word.toUpperCase().toCharArray();
         if (wordInChars.length > 0) {
             for (int i = 0; i < wordInChars.length; i++) {
-                result += SATANIC_HASH_TABLE.get(wordInChars[i]);
+                if (wordInChars[i] != ' ')
+                    result += SATANIC_HASH_TABLE.get(wordInChars[i]);
             }
         }
         return String.valueOf(result);

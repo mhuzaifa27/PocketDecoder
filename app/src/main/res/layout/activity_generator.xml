@@ -25,18 +25,20 @@
 
         <EditText
             android:id="@+id/tvGeneratedString"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="@dimen/_60sdp"
             android:layout_marginHorizontal="@dimen/_20sdp"
-            android:background="@android:color/transparent"
+            android:background="@drawable/bg_box_red"
             android:editable="false"
             android:fontFamily="@font/ocr_a"
             android:gravity="center"
-            android:text=""
+            android:text="i3j43n4k"
             android:textColor="@color/white"
             android:textIsSelectable="true"
             android:textSize="@dimen/_30sdp"
             app:layout_constraintBottom_toTopOf="@+id/imageView2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
@@ -53,9 +55,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Generate\nAplhanumeric\nSequence"
+            android:text="Generate\nAlphanumeric\nSequence"
             android:textSize="@dimen/_10sdp"
             android:textColor="@color/red"
+            android:textAllCaps="true"
             android:fontFamily="@font/ocr_a"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

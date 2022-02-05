@@ -52,11 +52,14 @@ public class SumerianTable {
         char[] wordInChars = word.toUpperCase().toCharArray();
         if (wordInChars.length > 0) {
             for (int i = 0; i < wordInChars.length; i++) {
-                if (equation.equals(""))
-                    equation = String.valueOf(SUMERIAN_HASH_TABLE.get(wordInChars[i]));
-                else
-                    equation = equation + "+" + SUMERIAN_HASH_TABLE.get(wordInChars[i]);
-                result += SUMERIAN_HASH_TABLE.get(wordInChars[i]);
+                if (wordInChars[i] != ' ') {
+                    if (equation.equals("")) {
+                        equation = String.valueOf(SUMERIAN_HASH_TABLE.get(wordInChars[i]));
+                    } else {
+                        equation = equation + "+" + SUMERIAN_HASH_TABLE.get(wordInChars[i]);
+                    }
+                    result += SUMERIAN_HASH_TABLE.get(wordInChars[i]);
+                }
             }
         }
         return "= " + equation;
@@ -68,7 +71,8 @@ public class SumerianTable {
         char[] wordInChars = word.toUpperCase().toCharArray();
         if (wordInChars.length > 0) {
             for (int i = 0; i < wordInChars.length; i++) {
-                result += SUMERIAN_HASH_TABLE.get(wordInChars[i]);
+                if (wordInChars[i] != ' ')
+                    result += SUMERIAN_HASH_TABLE.get(wordInChars[i]);
             }
         }
         return String.valueOf(result);

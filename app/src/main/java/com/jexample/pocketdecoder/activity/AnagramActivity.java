@@ -21,13 +21,14 @@ public class AnagramActivity extends AppCompatActivity {
     private Activity activity = AnagramActivity.this;
     private ActivityAnagramBinding binding;
     private Dialog waitDialog;
+    private Anagram anagram=new Anagram();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_anagram);
         // we disable validate button because words are not loaded from assets
-        binding.validate.setEnabled(Anagram.isLoaded());
+        binding.validate.setEnabled(anagram.isLoaded());
         // we need to load words from assets
         loadWords();
 
@@ -43,8 +44,9 @@ public class AnagramActivity extends AppCompatActivity {
                         showWaitDialog(); // wait dialog for user
 
                         new Thread(() -> {
-                            final List<String> words = Anagram.listWords(text); // we search anagrams for entered letters in separate thread
-
+                            final List<String> words = anagram.listWords(text); // we search anagrams for entered letters in separate thread
+                            if(words.contains(text))
+                                words.remove(text);
                             runOnUiThread(() -> {
                                 hideWaitDialog();
                                 // we display results
@@ -83,11 +85,11 @@ public class AnagramActivity extends AppCompatActivity {
     private void loadWords() {
         showWaitDialog();
         new Thread(() -> {
-            Anagram.loadWords(activity);
+            anagram.loadWords(activity);
 
             runOnUiThread(() -> {
                 hideWaitDialog();
-                binding.validate.setEnabled(Anagram.isLoaded());
+                binding.validate.setEnabled(anagram.isLoaded());
             });
         }).start();
     }

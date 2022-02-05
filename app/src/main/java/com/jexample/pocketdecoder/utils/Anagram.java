@@ -14,18 +14,18 @@ import java.util.List;
  */
 public class Anagram {
 
-    private static final String DICT = "dict";
+    private final String DICT = "dict";
     // list of words loaded for searching anagrams
-    private static final List<String> WORDS = new ArrayList<>();
+    private final List<String> WORDS = new ArrayList<>();
     // Boolean indicating if words are loaded or no
-    private static boolean LOADED = false;
+    private boolean LOADED = false;
 
-    public static boolean isLoaded() {
+    public boolean isLoaded() {
         return LOADED;
     }
 
     // Method for loading words from assets
-    public static void loadWords(Context context) {
+    public void loadWords(Context context) {
         BufferedReader buf = null;
 
         try {
@@ -56,7 +56,7 @@ public class Anagram {
     }
 
     // Method for comparing two strings and returning true if they have same letters
-    public static boolean sameLetters(String a, String b) {
+    public boolean sameLetters(String a, String b) {
         if (a == null)
             return b == null;
         if (b == null)
@@ -74,12 +74,14 @@ public class Anagram {
     }
 
     // Method returning all anagrams for entered letters
-    public static List<String> listWords(String letters) {
+    public List<String> listWords(String letters) {
         List<String> list = new ArrayList<>();
 
         for (String word : WORDS) {
-            if (sameLetters(word.toUpperCase(), letters.toUpperCase()))
-                list.add(word);
+            if (sameLetters(word, letters.toUpperCase())) {
+                if (!letters.equalsIgnoreCase(word))
+                    list.add(word);
+            }
         }
         return list;
     }

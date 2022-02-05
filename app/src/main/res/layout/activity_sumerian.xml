@@ -3,89 +3,113 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/chart_sumerian">
-
-        <View
-            android:id="@+id/view"
+        android:fillViewport="true">
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_80sdp"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/tvWord"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/ocr_a"
-            android:text="test"
-            android:textColor="@color/white"
-            android:textSize="@dimen/_30sdp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view" />
+            android:background="@drawable/bg2">
 
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_10sdp"
-            android:layout_marginTop="@dimen/_20sdp"
-            android:fontFamily="@font/chiller"
-            android:gravity="top"
-            android:text="="
-            android:textColor="@color/white"
-            android:textSize="@dimen/_40sdp"
-            android:visibility="gone"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvWord" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:orientation="vertical"
-            android:paddingHorizontal="@dimen/_20sdp"
-            app:layout_constraintBottom_toTopOf="@+id/view2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textView5"
-            app:layout_constraintTop_toBottomOf="@+id/tvWord">
 
             <TextView
-                android:id="@+id/tvEquation"
+                android:id="@+id/tvWord"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/ocr_a"
+                android:text="test"
                 android:layout_marginHorizontal="@dimen/_20sdp"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_30sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="@dimen/_20sdp"/>
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
                 android:layout_marginTop="@dimen/_20sdp"
-                android:fontFamily="@font/ocr_a"
-                android:gravity="center"
-                android:lineSpacingMultiplier="1.5"
+                android:fontFamily="@font/chiller"
+                android:gravity="top"
+                android:text="="
                 android:textColor="@color/white"
-                android:textSize="@dimen/_30sdp" />
+                android:textSize="@dimen/_40sdp"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvWord" />
 
-            <View
+            <LinearLayout
+                android:id="@+id/linearLayout"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_2sdp"
-                android:layout_marginVertical="@dimen/_10sdp"
-                android:background="@color/white" />
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginVertical="@dimen/_20sdp"
+                android:layout_marginHorizontal="@dimen/_20sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="@dimen/_20sdp"
+                app:layout_constraintStart_toEndOf="@+id/textView5"
+                app:layout_constraintTop_toBottomOf="@+id/tvWord">
+
+                <TextView
+                    android:id="@+id/tvEquation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:fontFamily="@font/ocr_a"
+                    android:gravity="center"
+                    android:lineSpacingMultiplier="1.5"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_30sdp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_2sdp"
+                    android:layout_marginVertical="@dimen/_10sdp"
+                    android:background="@color/white" />
+
+                <TextView
+                    android:id="@+id/tvResult"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_20sdp"
+                    android:fontFamily="@font/ocr_a"
+                    android:gravity="center"
+                    android:lineSpacingMultiplier="1.5"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_30sdp" />
+            </LinearLayout>
 
             <TextView
-                android:id="@+id/tvResult"
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_30sdp"
+                android:fontFamily="@font/ocr_a"
+                android:text="Sumerian"
+                android:textAllCaps="true"
+                android:textColor="#19fe98"
+                android:textSize="@dimen/_20sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+            <ImageView
+                android:id="@+id/imageView3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/_20sdp"
-                android:fontFamily="@font/ocr_a"
-                android:gravity="center"
-                android:lineSpacingMultiplier="1.5"
-                android:textColor="@color/white"
-                android:textSize="@dimen/_30sdp" />
-        </LinearLayout>
-
-        <View
-            android:id="@+id/view2"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_250sdp"
-            app:layout_constraintBottom_toBottomOf="parent" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:src="@drawable/sumerian_table"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView6"
+                tools:layout_editor_absoluteX="26dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </layout>

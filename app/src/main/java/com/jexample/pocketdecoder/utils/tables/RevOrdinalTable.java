@@ -44,6 +44,7 @@ public class RevOrdinalTable {
         }
         return instance;
     }
+
     public String getRevOrdinalEquation(String word) {
         int result = 0;
         String equation = "";
@@ -51,11 +52,13 @@ public class RevOrdinalTable {
         char[] wordInChars = word.toUpperCase().toCharArray();
         if (wordInChars.length > 0) {
             for (int i = 0; i < wordInChars.length; i++) {
-                if (equation.equals(""))
-                    equation = String.valueOf(REV_ORDINAL_HASH_TABLE.get(wordInChars[i]));
-                else
-                    equation = equation + "+" + REV_ORDINAL_HASH_TABLE.get(wordInChars[i]);
-                result += REV_ORDINAL_HASH_TABLE.get(wordInChars[i]);
+                if (wordInChars[i] != ' ') {
+                    if (equation.equals(""))
+                        equation = String.valueOf(REV_ORDINAL_HASH_TABLE.get(wordInChars[i]));
+                    else
+                        equation = equation + "+" + REV_ORDINAL_HASH_TABLE.get(wordInChars[i]);
+                    result += REV_ORDINAL_HASH_TABLE.get(wordInChars[i]);
+                }
             }
         }
         return "= " + equation;
@@ -67,7 +70,8 @@ public class RevOrdinalTable {
         char[] wordInChars = word.toUpperCase().toCharArray();
         if (wordInChars.length > 0) {
             for (int i = 0; i < wordInChars.length; i++) {
-                result += REV_ORDINAL_HASH_TABLE.get(wordInChars[i]);
+                if (wordInChars[i] != ' ')
+                    result += REV_ORDINAL_HASH_TABLE.get(wordInChars[i]);
             }
         }
         return String.valueOf(result);
