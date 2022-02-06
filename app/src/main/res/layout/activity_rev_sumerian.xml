@@ -92,7 +92,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="@dimen/_30sdp"
                 android:fontFamily="@font/ocr_a"
-                android:text="Reverse Ordinal"
+                android:text="Reverse Sumerian"
                 android:textAllCaps="true"
                 android:textColor="#0bf64c"
                 android:textSize="@dimen/_20sdp"
@@ -106,7 +106,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/_20sdp"
                 android:layout_marginBottom="@dimen/_20sdp"
-                android:src="@drawable/rev_ordinal_table"
+                android:src="@drawable/rev_sumerian"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView6"
                 tools:layout_editor_absoluteX="26dp" />
